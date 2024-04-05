@@ -221,22 +221,25 @@
 }
 ```
 
-#### Scenario-002: Test cancel an order with valid consumer ID.
+#### Scenario-011: Test cancel an order with valid consumer ID.
 | Scenario      | Test cancel an order with valid consumer ID. |
 | :----------- | :------------|
-| **Preconditions** |  | 
-|              |  |
-|              |  |
-|              |  |
-|              |  |
-| **Step To Execute**     |  |
-|              |  |
-|              |  |
-|              |  |
-| **Expected Result**| |
-| **Actual Result**| |
-| **Test Result**|  |
+| **Preconditions** | 1. The FTGO application is deployed and running. | 
+|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
+|              | 3. Necessary data such as consumers and menu items are available in the system. |
+|              | 4. The order ID used in this scenario exists in the database. |
+| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
+|              | 2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out. |
+|              | 3. Input the order id in the order id input box. |
+|              | 4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
+| **Expected Result**| 1. Order cancellation should be success, because the order id is  exist in the database so the API can cancel the order. |
+|              | 2. The system shouldn’t return an error response, indicating that order ID is valid or found in the database |
+| **Actual Result**| By entering  orderId correctly, the order data will be deleted and the system will display the message “APPROVAL_PENDING”. |
+|              | Response body:<br><pre lang="json">{&#13;  "orderId": 7,&#13; &#13;  "state": "APPROVAL_PENDING",&#13; &#13;  "orderTotal": "73.43",&#13;}
+| **Test Result**| PASS |
 **Test Data**
 ```json
-
+{
+“orderId”: “7”
+}
 ```
