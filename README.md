@@ -201,7 +201,7 @@
 ```
 
 ### End-to-end tests Cancel Order
-#### Scenario-001:
+#### Scenario-001: Test cancel an order with invalid consumer ID.
 | Scenario      | Test cancel an order with invalid consumer ID. |
 | :----------- | :------------|
 | **Preconditions** |  | 
@@ -221,7 +221,7 @@
 
 ```
 
-#### Scenario-002:
+#### Scenario-002: Test cancel an order with valid consumer ID.
 | Scenario      | Test cancel an order with valid consumer ID. |
 | :----------- | :------------|
 | **Preconditions** |  | 
