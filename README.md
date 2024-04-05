@@ -44,7 +44,7 @@
 |              | 4. Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. Upon submission, the order status transitions to "Pending" or "Received". |
 | **Actual Result**| The actual result aligns with the expected result. The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. |
-|              | <br><pre lang="json">{&#13;  "orderId": 3&#13;}</pre>|
+|              | Response body:<br><pre lang="json">{&#13;  "orderId": 3&#13;}</pre> Response Headers:<br><pre lang="json">connection: keep-alive  content-type: application/json  date: Fri05 Apr 2024 09:30:14 GMT  keep-alive: timeout=60  transfer-encoding: chunked  zipkin-trace-id: 78bca4589393d379</pre>|
 | **Test Result**| PASS|
 **Test Data**
 ```json
