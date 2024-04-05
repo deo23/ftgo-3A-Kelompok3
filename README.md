@@ -8,12 +8,12 @@
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Membuat Order | 
-| **Scenario**     | <ol><li>Test adding an order with valid consumer and restaurant IDs.</li><li>Test adding an order with invalid consumer ID (not existing in the database).</li><li>Test adding an order with invalid restaurant ID (not existing in the database).</li><li>Test adding an order with invalid items (not existing in the database).</li></ol>|
+| **Scenario**     |<ol><li>Test adding an order with valid consumer and restaurant IDs.</li><li>Test adding an order with invalid consumer ID (not existing in the database).</li><li>Test adding an order with invalid restaurant ID (not existing in the database).</li><li>Test adding an order with invalid items (not existing in the database).</li></ol>|
 
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Mengubah orderan yang sebelumnya telah di create. | 
-| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs.<br>2. Test adding an order with invalid consumer ID (not existing in the database).<br>3. Test adding an order with invalid restaurant ID (not existing in the database).<br>4. Test adding an order with invalid items (not existing in the database).<br>5. Test revise an order with valid quantit.<br>6. Test revise an order came up with grand total of order after update. |
+| **Scenario**     | <ol><li>Test adding an order with valid consumer and restaurant IDs.</li><li>Test adding an order with invalid consumer ID (not existing in the database).</li><li>Test adding an order with invalid restaurant ID (not existing in the database).</li><li>Test adding an order with invalid items (not existing in the database).</li><li>Test revise an order with valid quantit.<br>6. Test revise an order came up with grand total of order after update.</li></ol>|
 
 | Feature      | Cancel Order |
 | :----------- | :------------|
