@@ -46,43 +46,8 @@
 | **Actual Result**| The actual result aligns with the expected result. The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. |
 |              | Response body:<br><pre lang="json">{&#13;  "orderId": 3&#13;}</pre> Response Headers:<br><pre lang="json">connection: keep-alive  content-type: application/json &#13;date: Fri05 Apr 2024 09:30:14 GMT keep-alive: timeout=60&#13;transfer-encoding: chunked  zipkin-trace-id: 78bca4589393d379</pre>|
 | **Test Result**| PASS|
-**Test Data**
-```json
-{
-  "consumerId": 2,
-  "deliveryAddress": {
-    "city": "bandung",
-    "state": "indonesia",
-    "street1": "ciwaruga",
-    "street2": "polban",
-    "zip": "12345"
-  },
-  "deliveryTime": "2024-04-05T07:59:41.408Z",
-  "lineItems": [
-    {
-      "menuItemId": "001",
-      "quantity": "1"
-    },
-    {
-      "menuItemId": "002",
-      "quantity": "2"
-    },
-    {
-      "menuItemId": "003",
-      "quantity": "1"
-    },
-    {
-      "menuItemId": "004",
-      "quantity": "2"
-    },
-    {
-      "menuItemId": "005",
-      "quantity": "1"
-    }
-  ],
-  "restaurantId": 3
-}
-``` 
+| **Test Data** | <pre lang="json">{&#13;  "consumerId": 2,&#13;  "deliveryAddress": {&#13;    "city": "bandung",&#13;    "state": "indonesia",&#13;    "street1": "ciwaruga",&#13;    "street2": "polban",&#13;    "zip": "12345"&#13;  },&#13;  "deliveryTime": "2024-04-05T07:59:41.408Z",&#13;  "lineItems": [&#13;    {&#13;      "menuItemId": "001",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "002",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "003",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "004",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "005",&#13;      "quantity": "1"&#13;    }&#13;  ],&#13;  "restaurantId": 3&#13;}</pre>|
+
 #### Scenario-002: Test adding an order with invalid consumer ID (not existing in the database).
 | Scenario      | Test adding an order with invalid items (not existing in the database). |
 | :----------- | :------------|
