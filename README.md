@@ -189,6 +189,7 @@ Input_id: "10"
 | **Expected Result**| 1. Order cancellation should be failed, because the order id is not exist in the database so the API cannot cancel the order.<br>2. The system should return an error response, indicating that order ID is invalid or not found in the database. |
 | **Actual Result**| The actual result aligned with the expected result, Upon sending the request to cancel an order with an invalid order ID, the API responds with an error message indicating that the specified item is not found, so the system could not cancel any order id that was not stored in the database. Although there was no message that indicating the specified order ID that was not found. |
 |              | Error:<br><pre lang="json">connection: keep-alive  content-type: application/json &#13;date: Fri05 Apr 2024 10:35:11 GMT keep-alive: timeout=60&#13;transfer-encoding: chunked  zipkin-trace-id: 6dab539f68650c17</pre>|
+| **Test Result**| PASS |
 | **Test Data**| <pre lang="json">{&#13;  "orderId": "2003",&#13;} |
 
 #### Scenario-010: Test cancel an order with valid Order ID.
