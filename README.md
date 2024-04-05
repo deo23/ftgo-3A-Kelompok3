@@ -213,7 +213,7 @@ Input_id: "10"
 ```
 
 ### End-to-end tests Cancel Order
-#### Scenario-010: Test cancel an order with invalid Order ID.
+#### Scenario-009: Test cancel an order with invalid Order ID.
 | Scenario      | Test cancel an order with invalid Order ID. |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
@@ -236,7 +236,7 @@ Input_id: "10"
 }
 ```
 
-#### Scenario-011: Test cancel an order with valid Order ID.
+#### Scenario-010: Test cancel an order with valid Order ID.
 | Scenario      | Test cancel an order with valid Order ID. |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
