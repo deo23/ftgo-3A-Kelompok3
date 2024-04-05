@@ -78,14 +78,7 @@
 | **Actual Result**|  The expected result is the actual result displayed as follows The order will be updated and a message will be displayed that the update has been successful "APPROVED" and also displays the total order price after the update |
 |              | Response body:<br><pre lang="json">{&#13;"orderId": 2,&#13; &#13;"state": "APPROVED",&#13; &#13;"orderTotal": "73.43"&#13;} | 
 | **Test Result**| PASS |
-**Test Data**
-```json
-{
-  "orderId": "2"
-   "state": "APPROVED",
-   "orderTotal": "73.43"
-}
-```
+| **Test Data** | <pre lang="json">{&#13;  "orderId": "2",&#13;  "state": "APPROVED",&#13;  "orderTotal": "73.43"&#13;}</pre>|
 
 #### Scenario-006: Test revise an order with invalid menu item ID (not existing in the database). 
 | Scenario      | Test revise an order with invalid menu item ID (not existing in the database). |
