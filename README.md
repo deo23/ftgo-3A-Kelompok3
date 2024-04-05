@@ -49,7 +49,7 @@
 | **Test Data** | <pre lang="json">{&#13;  "consumerId": 2,&#13;  "deliveryAddress": {&#13;    "city": "bandung",&#13;    "state": "indonesia",&#13;    "street1": "ciwaruga",&#13;    "street2": "polban",&#13;    "zip": "12345"&#13;  },&#13;  "deliveryTime": "2024-04-05T07:59:41.408Z",&#13;  "lineItems": [&#13;    {&#13;      "menuItemId": "001",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "002",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "003",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "004",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "005",&#13;      "quantity": "1"&#13;    }&#13;  ],&#13;  "restaurantId": 3&#13;}</pre>|
 
 #### Scenario-002: Test adding an order with invalid consumer ID (not existing in the database).
-| Scenario      | Test adding an order with invalid items (not existing in the database). |
+| Scenario      | Test adding an order with invalid consumer ID (not existing in the database). |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
 |              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.|
@@ -63,7 +63,7 @@
 | **Expected Result**| The order creation process fails. The system returns an error response indicating that the consumer ID provided is invalid or not found. No order is created or persisted in the system. The API gateway properly handles the error response from the order service. |
 | **Actual Result**| Actual results do not match expected results. The order creation process seemingly succeeds. The system does not return an error response despite the invalid consumer ID. An order is created and assigned a consumer ID, but the association is invalid as the consumer ID does not exist in the database. The system erroneously treats the invalid consumer ID as valid, leading to a potentially incorrect representation of the order. |
 |               | Response body:<br><pre lang="json">{&#13;  "orderId": 3&#13;}</pre> Response Headers:<br><pre lang="json">connection: keep-alive  content-type: application/json &#13;date: Fri05 Apr 2024 09:45:32 GMT keep-alive: timeout=60&#13;transfer-encoding: chunked  zipkin-trace-id: 6c34b51d9aba602e 
-| **Test Result**| PASS|
+| **Test Result**| FAIL |
 | **Test Data** | <pre lang="json">{&#13;  "consumerId": 100,&#13;  "deliveryAddress": {&#13;    "city": "bandung",&#13;    "state": "indonesia",&#13;    "street1": "ciwaruga",&#13;    "street2": "polban",&#13;    "zip": "12345"&#13;  },&#13;  "deliveryTime": "2024-04-05T07:59:41.408Z",&#13;  "lineItems": [&#13;    {&#13;      "menuItemId": "001",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "002",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "003",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "004",&#13;      "quantity": "2"&#13;    },&#13;    {&#13;      "menuItemId": "005",&#13;      "quantity": "1"&#13;    }&#13;  ],&#13;  "restaurantId": 3&#13;}</pre>|
 
 ### End-to-end tests Revise Order
