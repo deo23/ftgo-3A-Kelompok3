@@ -43,13 +43,7 @@
 |              | 3. Write the JSON in Test Data for creating an order. |
 |              | 4. Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. Upon submission, the order status transitions to "Pending" or "Received". |
-|              | 2. The order details, including selected items, are correctly associated with the consumer and restaurant IDs.|
-|              | 3. The order request is processed without any visible errors or glitches. |
-|              | 4. The system sends notifications to the restaurant, informing them of the new order. |
-|              | 5. The consumer receives a confirmation notification, indicating the successful submission of the order. |
-|              | 6. The API gateway properly routes the order request to the appropriate services (ftgo-order-service, ftgo-restaurant-service, etc.). |
-|              | 7. The order is visible in the order history service as a pending or received order. |
-| **Actual Result**| |
+| **Actual Result**| The actual result aligns with the expected result. The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs.  |
 | **Test Result**| PASS|
 **Test Data**
 ```json
