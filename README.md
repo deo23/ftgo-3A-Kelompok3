@@ -16,8 +16,7 @@
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Mengubah orderan yang sebelumnya telah di create. | 
-| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs. |
-|              | 2. Test adding an order with invalid consumer ID (not existing in the database). |
+| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs.<br>2. Test adding an order with invalid consumer ID (not existing in the database). |
 |              | 3. Test adding an order with invalid restaurant ID (not existing in the database). |
 |              | 4. Test adding an order with invalid items (not existing in the database). |
 |              | 5. Test revise an order with valid quantit. |
