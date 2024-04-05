@@ -229,11 +229,6 @@ Input_id: "10"
 | **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html<br>2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out.<br>3. Input the order id in the order id input box.<br>4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| 1. Order cancellation should be success, because the order id is  exist in the database so the API can cancel the order.<br>2. The system shouldn’t return an error response, indicating that order ID is valid or found in the database |
 | **Actual Result**| By entering  orderId correctly, the order data will be deleted and the system will display the message “APPROVAL_PENDING”. |
-|              | Response body:<br><pre lang="json">{&#13;  "orderId": 7,&#13; &#13;  "state": "APPROVAL_PENDING",&#13; &#13;  "orderTotal": "73.43"&#13;}
+|              | Response body:<br><pre lang="json">{&#13;  "orderId": 7,&#13; &#13;  "state": "APPROVAL_PENDING",&#13; &#13;  "orderTotal": "73.43"&#13;} |
 | **Test Result**| PASS |
-**Test Data**
-```json
-{
-“orderId”: “7”
-}
-```
+| **Test Data**| <pre lang="json">{&#13;  "orderId": 7,&#13;} |
