@@ -194,29 +194,7 @@ Input_id: 2
 
 ```
 
-#### Scenario-008: Test revise an order came up with grand total of order after update
-| Scenario      |  | Test revise an order came up with grand total of order after update
-| :----------- | :------------|
-| **Preconditions** | 1. The FTGO application is deployed and running. | 
-|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
-|              | 3. Necessary data such as consumers and menu items are available in the system. |
-|              | 4. The restaurant ID used in this scenario exists in the database. |
-| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
-|              | 2. Navigate to the section where the request body JSON input in POST /revise  section, then click Try it Out.  |
-|              | 3. Write the JSON in Test Data for creating an order. |
-|              | 4. Once the request body JSON is filled, click on the "Execute" button to send the request to the server. |
-| **Expected Result**| By entering the order ID, menu ID correctly, the order data will be updated and then the system will display the message "APPROVED" and also display the total order price after the update. |
-| **Actual Result**| by entering the order ID, menu ID correctly, the expected result and actual result will be the same so that the order data will be updated and then the system will display the message "APPROVED" and also display the total order price after the update. |
-|              | Response body:<br><pre lang="json">{&#13;"orderId": 2,&#13; &#13;"state": "APPROVED",&#13; &#13;"orderTotal": "73.43"&#13;} |
-| **Test Result**| PASS |
-**Test Data**
-```json
-{
-  "orderId": 2.
-   "state": "APPROVED",
-   "orderTotal": "73.43"
-}
-```
+
 
 ### End-to-end tests Cancel Order
 #### Scenario-009: Test cancel an order with invalid Order ID.
