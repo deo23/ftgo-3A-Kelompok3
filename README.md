@@ -32,7 +32,7 @@
 ## End-to-end tests
 ### End-to-end tests Create Order
 #### Scenario-001: Test adding an order with valid consumer and restaurant IDs.
-| Scenario      | Test adding an order with invalid restaurant ID (not existing in the database). |
+| Scenario      | Test adding an order with valid consumer and restaurant IDs. |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
 |              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.|
@@ -42,7 +42,7 @@
 |              | 2. Look for the section where the request body JSON input in POST /orders section, then click Try it Out. |
 |              | 3. Write the JSON in Test Data for creating an order. |
 |              | 4. Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server. |
-| **Expected Result**| 1. The consumer successfully places the order. |
+| **Expected Result**| The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. Upon submission, the order status transitions to "Pending" or "Received". |
 |              | 2. The order details, including selected items, are correctly associated with the consumer and restaurant IDs.|
 |              | 3. The order request is processed without any visible errors or glitches. |
 |              | 4. The system sends notifications to the restaurant, informing them of the new order. |
