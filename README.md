@@ -16,12 +16,10 @@
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Mengubah orderan yang sebelumnya telah di create. | 
-| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs. |
-|              | 2. Test adding an order with invalid consumer ID (not existing in the database). |
-|              | 3. Test adding an order with invalid restaurant ID (not existing in the database). |
-|              | 4. Test adding an order with invalid items (not existing in the database). |
-|              | 5. Test revise an order with valid quantit. |
-|              | 6. Test revise an order came up with grand total of order after update. |
+| **Scenario**     | 1. Test revise an order with valid menu item ID. |
+|              | 2. Test revise an order with invalid menu item ID (not existing in the database). |
+|              | 3. Test revise an order with valid menu order ID. |
+|              | 4. Test revise an order came up with grand total of order after update. |
 
 | Feature      | Cancel Order |
 | :----------- | :------------|
@@ -137,20 +135,20 @@
 ``` 
 
 ### End-to-end tests Revise Order
-#### Scenario-001:
-| Scenario      |  |
+#### Scenario-005: Test revise an order with valid items.
+| Scenario      | Test revise an order with valid menu item ID. |
 | :----------- | :------------|
-| **Preconditions** |  | 
-|              |  |
-|              |  |
-|              |  |
-|              |  |
-| **Step To Execute**     |  |
-|              |  |
-|              |  |
-|              |  |
-| **Expected Result**| |
-| **Actual Result**| |
+| **Preconditions** | 1. The FTGO application is deployed and running. | 
+|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.  |
+|              | 3. Necessary data such as consumers and menu items are available in the system. |
+|              | 4. The restaurant ID used in this scenario exists in the database. |
+| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
+|              | 2. Navigate to the section where the request body JSON input in POST /revise  section, then click Try it Out. |
+|              | 3. Write the JSON in Test Data for creating an order. |
+|              | 4. Once the request body JSON is filled, click on the "Execute" button to send the request to the server. |
+| **Expected Result**| The order will be updated and a message will be displayed that the update has been successful "APPROVED" and also displays the total order price after the update |
+| **Actual Result**|  The expected result is the actual result displayed as follows The order will be updated and a message will be displayed that the update has been successful "APPROVED" and also displays the total order price after the update |
+|              | Response body:<br><pre lang="json">{&#13;  "orderId": 2,&#13; &#13;  "state": "APPROVED",&#13; &#13;  "orderTotal": "73.43"&#13;}
 | **Test Result**|  |
 **Test Data**
 ```json
