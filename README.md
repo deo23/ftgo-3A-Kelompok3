@@ -221,7 +221,7 @@
 
 ```
 
-#### Scenario-001:
+#### Scenario-002:
 | Scenario      | Test cancel an order with valid consumer ID. |
 | :----------- | :------------|
 | **Preconditions** |  | 
