@@ -148,12 +148,12 @@
 |              | 4. Once the request body JSON is filled, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| The order will be updated and a message will be displayed that the update has been successful "APPROVED" and also displays the total order price after the update |
 | **Actual Result**|  The expected result is the actual result displayed as follows The order will be updated and a message will be displayed that the update has been successful "APPROVED" and also displays the total order price after the update |
-|              | Response body:<br><pre lang="json">{&#13;  "orderId": 2,&#13; &#13;  "state": "APPROVED",&#13; &#13;  "orderTotal": "73.43"&#13;}
+|              | Response body:<br><pre lang="json">{&#13;  "orderId": 2,&#13; &#13;  "state": "APPROVED",&#13; &#13;  "orderTotal": "73.43"&#13;} | 
 | **Test Result**| PASS |
 **Test Data**
 ```json
 {
-  "orderId": 2.
+  "orderId": "2"
    "state": "APPROVED",
    "orderTotal": "73.43"
 }
@@ -172,11 +172,11 @@
 |              | 4. Once the request body JSON is filled, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| By sending an ID that is not in the database, the system will display an error message. |
 | **Actual Result**| the actual result is the expected result. The system will display an error message because it sent an ID that does not exist in the database. |
-|              |  Error:<br><pre lang="json">connection: keep-alive  content-Length: 0  &#13;date: Fri05 Apr 2024 09:55:57 GMT keep-alive: timeout=60&#13;zipkin-trace-id: 6dab539f68650c17</pre>
+|              |  Error:<br><pre lang="json">connection: keep-alive  content-Length: 0  &#13;date: Fri05 Apr 2024 09:55:57 GMT keep-alive: timeout=60&#13;zipkin-trace-id: 6dab539f68650c17</pre> | 
 | **Test Result**| PASS |
 **Test Data**
 ```json
-Input_id: 10
+Input_id: "10"
 
 {
   "revisedOrderLineItems": [
