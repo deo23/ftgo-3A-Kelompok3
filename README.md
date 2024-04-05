@@ -8,24 +8,17 @@
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Membuat Order | 
-| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs. |
-|              | 2. Test adding an order with invalid consumer ID (not existing in the database). |
-|              | 3. Test adding an order with invalid restaurant ID (not existing in the database). |
-|              | 4. Test adding an order with invalid items (not existing in the database). |
+| **Scenario**     | 1. Test adding an order with valid consumer and restaurant IDs.<br>2. Test adding an order with invalid consumer ID (not existing in the database).<br>3. Test adding an order with invalid restaurant ID (not existing in the database)<br>4. Test adding an order with invalid items (not existing in the database). |
 
 | Feature      | Create Order |
 | :----------- | :------------|
 | **Requirements** | Mengubah orderan yang sebelumnya telah di create. | 
-| **Scenario**     | 1. Test revise an order with valid menu item ID. |
-|              | 2. Test revise an order with invalid menu item ID (not existing in the database). |
-|              | 3. Test revise an order with valid menu order ID. |
-|              | 4. Test revise an order came up with grand total of order after update. |
+| **Scenario**     | 1. Test revise an order with valid menu item ID.<br>2. Test revise an order with invalid menu item ID (not existing in the database).<br>3. Test revise an order with valid menu order ID.<br>4. Test revise an order came up with grand total of order after update. |
 
 | Feature      | Cancel Order |
 | :----------- | :------------|
 | **Requirements** | Membatalkan order yang sebelumnya sudah di create. | 
-| **Scenario**     | 1. Test cancel an order with invalid consumer ID. |
-|              | 2. Test cancel an order with valid consumer ID. |
+| **Scenario**     | 1. Test cancel an order with invalid consumer ID.<br>2. Test cancel an order with valid consumer ID. |
 
 ## End-to-end tests
 ### End-to-end tests Create Order
@@ -216,16 +209,9 @@ Input_id: "10"
 #### Scenario-009: Test cancel an order with invalid Order ID.
 | Scenario      | Test cancel an order with invalid Order ID. |
 | :----------- | :------------|
-| **Preconditions** | 1. The FTGO application is deployed and running. | 
-|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
-|              | 3. Necessary data such as consumers and menu items are available in the system. |
-|              | 4. The order ID used in this scenario exists in the database. |
-| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
-|              | 2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out. |
-|              | 3. Input the order id in the order id input box. |
-|              | 4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
-| **Expected Result**| 1. Order cancellation should be failed, because the order id is not exist in the database so the API cannot cancel the order. |
-|              | 2. The system should return an error response, indicating that order ID is invalid or not found in the database. |
+| **Preconditions** | 1. The FTGO application is deployed and running.<br>2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.<br>3. Necessary data such as consumers and menu items are available in the system.<br>4. The order ID used in this scenario exists in the database. |
+| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html<br>2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out.<br>3. Input the order id in the order id input box.<br>4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
+| **Expected Result**| 1. Order cancellation should be failed, because the order id is not exist in the database so the API cannot cancel the order.<br>2. The system should return an error response, indicating that order ID is invalid or not found in the database. |
 | **Actual Result**| The actual result aligned with the expected result, Upon sending the request to cancel an order with an invalid order ID, the API responds with an error message indicating that the specified item is not found, so the system could not cancel any order id that was not stored in the database. Although there was no message that indicating the specified order ID that was not found. |
 |              | Error:<br><pre lang="json">connection: keep-alive  content-type: application/json &#13;date: Fri05 Apr 2024 10:35:11 GMT keep-alive: timeout=60&#13;transfer-encoding: chunked  zipkin-trace-id: 6dab539f68650c17</pre>|
 | **Test Result**| PASS |
@@ -239,16 +225,9 @@ Input_id: "10"
 #### Scenario-010: Test cancel an order with valid Order ID.
 | Scenario      | Test cancel an order with valid Order ID. |
 | :----------- | :------------|
-| **Preconditions** | 1. The FTGO application is deployed and running. | 
-|              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
-|              | 3. Necessary data such as consumers and menu items are available in the system. |
-|              | 4. The order ID used in this scenario exists in the database. |
-| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html |
-|              | 2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out. |
-|              | 3. Input the order id in the order id input box. |
-|              | 4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
-| **Expected Result**| 1. Order cancellation should be success, because the order id is  exist in the database so the API can cancel the order. |
-|              | 2. The system shouldn’t return an error response, indicating that order ID is valid or found in the database |
+| **Preconditions** | 1. The FTGO application is deployed and running.<br>2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.<br>3. Necessary data such as consumers and menu items are available in the system.<br>4. The order ID used in this scenario exists in the database. |
+| **Step To Execute**     | 1. Open Swagger UI in localhost:8082/orders/index.html<br>2. Navigate to the section where the request order id input in POST /cancel section, then click Try it Out.<br>3. Input the order id in the order id input box.<br>4. Once the order id is filled, click on the "Execute" button to send the request to the server. |
+| **Expected Result**| 1. Order cancellation should be success, because the order id is  exist in the database so the API can cancel the order.<br>2. The system shouldn’t return an error response, indicating that order ID is valid or found in the database |
 | **Actual Result**| By entering  orderId correctly, the order data will be deleted and the system will display the message “APPROVAL_PENDING”. |
 |              | Response body:<br><pre lang="json">{&#13;  "orderId": 7,&#13; &#13;  "state": "APPROVAL_PENDING",&#13; &#13;  "orderTotal": "73.43"&#13;}
 | **Test Result**| PASS |
