@@ -51,9 +51,20 @@
 | **Step To Execute**     | <ol><li>Open Swagger UI in localhost:8082/orders/index.html</li><li>Look for the section where the request body JSON input in POST /orders section, then click Try it Out.</li><li>Write the JSON in Test Data for creating an order.</li><li>Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server.</li></ol> |
 | **Expected Result**| Upon sending the request to create an order with an invalid restaurant ID, the API should respond with an error message indicating that the specified restaurant is not found. |
 | **Actual Result**| The actual result aligns with the expected result. Upon sending the request to create an order with an invalid restaurant ID, the API responds with an error message indicating that the specified restaurant is not found. The response includes the error message "Restaurant not found with id 999", accurately identifying the issue encountered.  |
-|               | <pre lang="json">{&#13;  "timestamp": "2024-04-05T09:25:10.101+0000"&#13;  "status": 500,&#13;  "error": "Internal Server Error",&#13;  "message": "Restaurant not found with id 999",&#13;  "path": "/orders"}</pre> |
-| **Test Result**| FAIL |
+|               | <pre lang="json">{&#13;  "timestamp": "2024-04-05T09:25:10.101+0000"&#13;  "status": 500,&#13;  "error": "Internal Server Error",&#13;  "message": "Restaurant not found with id 999",&#13;  "path": "/orders"&#13;}</pre> |
+| **Test Result**| PASS |
 | **Test Data** | <pre lang="json">{&#13;  "consumerId": 3,&#13;  "deliveryAddress": {&#13;    "city": "New York",&#13;    "state": "New Jersey",&#13;    "street1": "123 Main Street",&#13;    "street2": "Suite 101",&#13;    "zip": "12345"&#13;  },&#13;  "deliveryTime": "2024-04-05T08:40:20.096Z",&#13;  "lineItems": [&#13;    {&#13;      "menuItemId": "001",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "002",&#13;      "quantity": "2"&#13;    },&#13;     ],&#13;  "restaurantId": 999&#13;}</pre>|
+
+#### Scenario-004: Test adding an order with invalid items (not existing in the database).
+| Scenario      | Test adding an order with invalid items (not existing in the database). |
+| :----------- | :------------|
+| **Preconditions** | <ol><li>The FTGO application is deployed and running.</li><li>All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational.</li><li>Necessary data such as consumers and restaurants are available in the system.</li><li>Once the request body JSON is filled, click on the "Execute" button to send the request to the server.</li></ol> |
+| **Step To Execute**     | <ol><li>Open Swagger UI in localhost:8082/orders/index.html</li><li>Look for the section where the request body JSON input in POST /orders section, then click Try it Out.</li><li>Write the JSON in Test Data for creating an order.</li><li>Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server.</li></ol> |
+| **Expected Result**| Upon sending the request to create an order with an invalid items ID, the API should respond with an error message indicating that the specified restaurant is not found. |
+| **Actual Result**| The actual result aligns with the expected result. Upon sending the request to create an order with an invalid restaurant ID, the API responds with an error message indicating that the specified item is not found. The response includes the error message "Invalid menu item id 999", accurately identifying the issue encountered. |
+|               | <pre lang="json">{&#13;  "timestamp": "2024-04-05T09:23:51.992+0000"&#13;  "status": 500,&#13;  "error": "Internal Server Error",&#13;  "message": "Invalid menu item id 999",&#13;  "path": "/orders"&#13;}</pre> |
+| **Test Result**| PASS |
+| **Test Data** | <pre lang="json">{&#13;  "consumerId": 3,&#13;  "deliveryAddress": {&#13;    "city": "New York",&#13;    "state": "New Jersey",&#13;    "street1": "123 Main Street",&#13;    "street2": "Suite 101",&#13;    "zip": "12345"&#13;  },&#13;  "deliveryTime": "2024-04-05T08:40:20.096Z",&#13;  "lineItems": [&#13;    {&#13;      "menuItemId": "001",&#13;      "quantity": "1"&#13;    },&#13;    {&#13;      "menuItemId": "999",&#13;      "quantity": "2"&#13;    },&#13;     ],&#13;  "restaurantId": 3&#13;}</pre>|
 
 ### End-to-end tests Revise Order
 #### Scenario-001:
