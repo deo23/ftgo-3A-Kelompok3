@@ -106,7 +106,7 @@
 | **Actual Result**| because you entered a valid menu ID, the expected result is the same as the actual result. The data was successfully updated and displayed the message and also display the total order price after the update |
 |              | Response body:<br><pre lang="json">{&#13;"orderId": 2,&#13; &#13;"state": "APPROVED",&#13; &#13;"orderTotal": "73.43"&#13;} |
 | **Test Result**| PASS |
-**Test Data**
+| **Test Data** | <pre lang="json">Input_id: 2&#13;&#13;{&#13;  "revisedOrderLineItems": [&#13; {&#13;  "menuItemId": "001",&#13;  "quantity": 5&#13;},&#13;{&#13;  "menuItemId": "002",&#13;  "quantity": 7&#13;}&#13;]&#13;}</pre>|
 ```json
 Input_id: 2
 
