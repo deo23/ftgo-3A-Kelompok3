@@ -44,7 +44,7 @@
 |              | 4. Once you've filled in the request body JSON, click on the "Execute" button to send the request to the server. |
 | **Expected Result**| The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. Upon submission, the order status transitions to "Pending" or "Received". |
 | **Actual Result**| The actual result aligns with the expected result. The consumer successfully places the order. The order details, including selected items, are correctly associated with the consumer and restaurant IDs. |
-|              | <pre><code>{<br>  "orderId": 3<br>}</code></pre>|
+|              | <br><pre lang="json">{&#13;  "orderId": 3}</pre>|
 | **Test Result**| PASS|
 **Test Data**
 ```json
