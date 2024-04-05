@@ -198,8 +198,8 @@
 ```
 
 ### End-to-end tests Cancel Order
-#### Scenario-010: Test cancel an order with invalid consumer ID.
-| Scenario      | Test cancel an order with invalid consumer ID. |
+#### Scenario-010: Test cancel an order with invalid Order ID.
+| Scenario      | Test cancel an order with invalid Order ID. |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
 |              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
@@ -221,8 +221,8 @@
 }
 ```
 
-#### Scenario-011: Test cancel an order with valid consumer ID.
-| Scenario      | Test cancel an order with valid consumer ID. |
+#### Scenario-011: Test cancel an order with valid Order ID.
+| Scenario      | Test cancel an order with valid Order ID. |
 | :----------- | :------------|
 | **Preconditions** | 1. The FTGO application is deployed and running. | 
 |              | 2. All microservices (consumer service, restaurant service, order service, kitchen service, accounting service, order history service, and API gateway) are operational. |
